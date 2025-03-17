@@ -66,7 +66,7 @@ public:
     Matrix operator/(const std::complex<double>& num) const;
 
     // Вычисление детерминанта
-    //std::complex<double> det() const;
+    std::complex<double> det() const;
 
     // Решение СЛАУ Ax = b методом Гаусса
     // b должна быть вектор-столбцом с числом строк, равным числу строк матрицы A

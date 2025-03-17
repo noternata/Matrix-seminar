@@ -198,7 +198,7 @@ std::complex<double> Matrix::det() const {
         for (size_t j = i; j < m_rows; j++) {
             temp->m_data[temp->index(i, j)] /= diagVal;
         }
-        // Обнуляем элементы ниже текущего
+        // Обнуляем элементы ниже
         for (size_t row = i+1; row < m_rows; row++) {
             std::complex<double> factor = temp->m_data[temp->index(row, i)];
             for (size_t col = i; col < m_rows; col++) {
@@ -249,7 +249,7 @@ std::ostream& operator<<(std::ostream& out, const Matrix& matrix) {
             std::complex<double> val = matrix.m_data[matrix.index(i, j)];
             out << "(" << val.real() << ", " << val.imag() << ") ";
         }
-        out << "\m_rows";
+        out << "\n";
     }
     return out;
 }
